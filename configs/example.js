@@ -52,6 +52,7 @@ config.primary.address = '[address]';
 config.primary.coin = {};
 config.primary.coin.name = 'Garlicoin';
 config.primary.coin.symbol = 'GRLC';
+config.primary.coin.algorithm = 'allium';
 
 // Daemon Configuration
 config.primary.daemons = [];
