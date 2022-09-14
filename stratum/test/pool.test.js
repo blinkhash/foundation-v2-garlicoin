@@ -2551,7 +2551,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 9999.996, 'generate': 0 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_primary': { 'immature': 9999.996, 'generate': 0 }};
     pool.handlePrimaryWorkers([blocks1], [[worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2592,7 +2592,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'generate': 0, 'immature': 19999.992 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_primary': { 'generate': 0, 'immature': 19999.992 }};
     pool.handlePrimaryWorkers([blocks1, blocks1], [[worker1], [worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2634,11 +2634,11 @@ describe('Test pool functionality', () => {
       work: 29.489361720000005
     };
     const worker2 = JSON.parse(JSON.stringify(worker1));
-    worker2.miner = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7';
-    worker2.worker = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7.worker4';
+    worker2.miner = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS';
+    worker2.worker = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS.worker4';
     const expected = {
-      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 4999.998, 'generate': 0 },
-      'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7': { 'immature': 4999.998, 'generate': 0 }};
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_primary': { 'immature': 4999.998, 'generate': 0 },
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS_false_primary': { 'immature': 4999.998, 'generate': 0 }};
     pool.handlePrimaryWorkers([blocks1], [[worker1, worker2]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2680,12 +2680,12 @@ describe('Test pool functionality', () => {
       work: 29.489361720000005
     };
     const worker2 = JSON.parse(JSON.stringify(worker1));
-    worker2.miner = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7';
-    worker2.worker = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7.worker4';
+    worker2.miner = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS';
+    worker2.worker = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS.worker4';
     worker2.times = 49.1;
     const expected = {
-      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 8474.10655446, 'generate': 0 },
-      'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7': { 'immature': 1525.88944554, 'generate': 0 }};
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_primary': { 'immature': 8474.10655446, 'generate': 0 },
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS_false_primary': { 'immature': 1525.88944554, 'generate': 0 }};
     pool.handlePrimaryWorkers([blocks1], [[worker1, worker2]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2726,7 +2726,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'generate': 9999.996, 'immature': 0 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_primary': { 'generate': 9999.996, 'immature': 0 }};
     pool.handlePrimaryWorkers([blocks1], [[worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2767,7 +2767,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 0, 'generate': 19999.992 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_primary': { 'immature': 0, 'generate': 19999.992 }};
     pool.handlePrimaryWorkers([blocks1, blocks1], [[worker1], [worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2928,7 +2928,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 9999.996, 'generate': 0 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_auxiliary': { 'immature': 9999.996, 'generate': 0 }};
     pool.handleAuxiliaryWorkers([blocks1], [[worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -2969,7 +2969,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'generate': 0, 'immature': 19999.992 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_auxiliary': { 'generate': 0, 'immature': 19999.992 }};
     pool.handleAuxiliaryWorkers([blocks1, blocks1], [[worker1], [worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -3011,11 +3011,11 @@ describe('Test pool functionality', () => {
       work: 29.489361720000005
     };
     const worker2 = JSON.parse(JSON.stringify(worker1));
-    worker2.miner = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7';
-    worker2.worker = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7.worker4';
+    worker2.miner = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS';
+    worker2.worker = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS.worker4';
     const expected = {
-      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 4999.998, 'generate': 0 },
-      'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7': { 'immature': 4999.998, 'generate': 0 }};
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_auxiliary': { 'immature': 4999.998, 'generate': 0 },
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS_false_auxiliary': { 'immature': 4999.998, 'generate': 0 }};
     pool.handleAuxiliaryWorkers([blocks1], [[worker1, worker2]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -3057,12 +3057,12 @@ describe('Test pool functionality', () => {
       work: 29.489361720000005
     };
     const worker2 = JSON.parse(JSON.stringify(worker1));
-    worker2.miner = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7';
-    worker2.worker = 'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7.worker4';
+    worker2.miner = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS';
+    worker2.worker = 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS.worker4';
     worker2.times = 49.1;
     const expected = {
-      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 8474.10655446, 'generate': 0 },
-      'na1CV4odThQ4mfzxQNhDbH4EN82bRukjq7': { 'immature': 1525.88944554, 'generate': 0 }};
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_auxiliary': { 'immature': 8474.10655446, 'generate': 0 },
+      'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjS_false_auxiliary': { 'immature': 1525.88944554, 'generate': 0 }};
     pool.handleAuxiliaryWorkers([blocks1], [[worker1, worker2]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -3103,7 +3103,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'generate': 9999.996, 'immature': 0 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_auxiliary': { 'generate': 9999.996, 'immature': 0 }};
     pool.handleAuxiliaryWorkers([blocks1], [[worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
@@ -3144,7 +3144,7 @@ describe('Test pool functionality', () => {
       valid: 22,
       work: 29.489361720000005
     };
-    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR': { 'immature': 0, 'generate': 19999.992 }};
+    const expected = { 'MJXo3Yipi2UoZCxqhPZeWAe3tTnxMRrxjR_false_auxiliary': { 'immature': 0, 'generate': 19999.992 }};
     pool.handleAuxiliaryWorkers([blocks1, blocks1], [[worker1], [worker1]], (results) => {
       expect(results).toStrictEqual(expected);
     });
